@@ -1,0 +1,14 @@
+# 记忆神经元 —— bundle 补丁层
+# 往 profile 里插入一行宿主插件；配置项都可选，改这里或用户自己的 cordis.patch.yml 覆盖。
+- insert:
+    - id: memory-neuron
+      name: dsh-memory-neuron
+      config:
+        # 记忆根目录（handoff.md / memory.md / self-model.md 所在）
+        memoryRoot: '<记忆根目录>'      # 例: C:\\Users\\<you>\\.dsh-memory
+        # 共享目录（你和阿深都能查）
+        neuronDir: '<共享状态目录>'      # 留空则用 <memoryRoot>/neuron
+        # UI 端口（独立 HTTP 服务，不经过 DSH 的 token 校验）
+        uiPort: 8318
+        # 跑 memory.mjs 用的 node
+        nodePath: ''                    # 留空则用当前进程的 node（process.execPath）

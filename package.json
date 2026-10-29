@@ -1,0 +1,33 @@
+{
+  "name": "dsh-memory-neuron",
+  "version": "1.0.6",
+  "description": "记忆神经元：把 memory.mjs（交接/事实/体检/归档/检索）接进 DSH，并提供一个可视化页面",
+  "private": false,
+  "type": "module",
+  "main": "./lib/host/index.js",
+  "exports": {
+    ".": "./lib/host/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "manifestVersion": 1,
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "files": [
+    "lib/**/*.js",
+    "tools/*",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ]
+}
